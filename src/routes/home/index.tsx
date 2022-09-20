@@ -1,23 +1,23 @@
 import { h } from "preact"
 import { useState, useEffect } from "preact/hooks"
 
-import style from './style.css';
+import style from './style.css'
 
 const Home = () => {
-    const [time, setTime] = useState<number>(Date.now());
+	const [time, setTime] = useState<number>(Date.now())
 
-    useEffect(() => {
-		let timer = setInterval(() => setTime(Date.now()), 1000);
-		return () => clearInterval(timer);
-	}, []);
+	useEffect(() => {
+		const timer = setInterval(() => setTime(Date.now()), 1000)
+		return () => clearInterval(timer)
+	}, [])
 
-    return (
+	return (
 		<div class={style.home}>
 			<h1>Это домашняя страница Хакимова Артура</h1>
 
 			<div>Current time: {new Date(time).toLocaleString()}</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
