@@ -5,15 +5,15 @@ import Header from './header';
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home';
-import Profile from '../routes/profile';
+import Lab1 from '../routes/labs/lab1'
+
 
 const App = () => (
 	<div id="app">
         <Header />
         <Router>
             <Route path="/" component={Home} />
-            <Route path="/profile/" component={Profile} user="me" />
-            <Route path="/profile/:user" component={Profile} />
+            <Route path="/lab/1" component={Lab1}/>
         </Router>
     </div>
 );
