@@ -5,7 +5,7 @@ import Header from './header'
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home'
-import Lab1 from '../routes/labs/lab1'
+import { Lab1 } from "../routes/labs/lab1";
 
 
 const App = () => (
