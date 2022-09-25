@@ -1,29 +1,6 @@
-.slide {
-  display: flex;
-  flex: 2;
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-.buttons {
-    user-select: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 15px;
-}
-
-.pageCount {
-    height: auto;
-    margin: 0 auto;
-    padding: 10px;
-    position: relative;
-}
-
 .slideContainer {
+  max-width: 1200px;
+  width: 100%;
   display: grid;
   margin: 0;
   position: absolute;
@@ -31,4 +8,22 @@ img {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.slide {
+  display: flex;
+  flex: 2;
+}
+
+.buttons {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+}
+
+.slideImage {
+  height: auto;
+  width: 100%;
 }
