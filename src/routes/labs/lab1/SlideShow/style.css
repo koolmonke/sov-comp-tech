@@ -2,11 +2,10 @@
   max-width: 1200px;
   width: 100%;
   display: grid;
-  margin: 0;
+  margin: 35px 0;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -20,7 +19,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15px;
+  font-size: x-large;
+  padding: 15px;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .slideImage {
