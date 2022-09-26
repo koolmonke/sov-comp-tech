@@ -2,7 +2,7 @@ import { h } from "preact";
 import { useReducer } from "preact/hooks";
 import style from "./style.css";
 
-export const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
+const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
   const reducer = (currentIndex: number, action: "next" | "prev") => {
     switch (action) {
       case "next":
@@ -31,3 +31,5 @@ export const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
     </div>
   );
 };
+
+export default Slideshow;
