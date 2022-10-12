@@ -53,10 +53,10 @@ export const updateAnswer = (toUpdateId: number, newAnswer: string) => {
 
 export const countRightAnswer = computed(
   () =>
-    testState.value.filter((item) => item.rightAnswer === item.givenAnswer)
+    testState.value.filter(({rightAnswer, givenAnswer}) => rightAnswer === givenAnswer)
       .length
 );
 
 export const isAllAnswered = computed(() =>
-  testState.value.every((test) => test.givenAnswer !== undefined)
+  testState.value.every(({givenAnswer}) => !!givenAnswer)
 );
