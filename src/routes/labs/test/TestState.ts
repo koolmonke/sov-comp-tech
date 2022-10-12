@@ -18,13 +18,13 @@ export const testState = signal<SingleTestData[]>([
   {
     id: 1,
     question: "Какой герой мультфильма живет в ананасе под водой?",
-    answers: ["Камбала", "Немо", "Рик и Морти", "Губка Боб Квадратные Штаны"],
+    answers: ["Немо", "Рик и Морти", "Губка Боб Квадратные Штаны"],
     rightAnswer: "Губка Боб Квадратные Штаны",
   },
   {
     id: 2,
     question: "Что является национальным животным Шотландии?",
-    answers: ["Лошадь", "Единорог", "Волк", "Корова"],
+    answers: ["Лошадь", "Единорог", "Волк", "Тигр", "Корова"],
     rightAnswer: "Единорог",
   },
   {
@@ -53,10 +53,11 @@ export const updateAnswer = (toUpdateId: number, newAnswer: string) => {
 
 export const countRightAnswer = computed(
   () =>
-    testState.value.filter(({rightAnswer, givenAnswer}) => rightAnswer === givenAnswer)
-      .length
+    testState.value.filter(
+      ({ rightAnswer, givenAnswer }) => rightAnswer === givenAnswer
+    ).length
 );
 
 export const isAllAnswered = computed(() =>
-  testState.value.every(({givenAnswer}) => !!givenAnswer)
+  testState.value.every(({ givenAnswer }) => !!givenAnswer)
 );
