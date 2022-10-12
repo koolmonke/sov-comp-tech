@@ -1,7 +1,7 @@
 import { h } from "preact";
-import { isAllAnswered, SingleTestData, updateAnswer } from "./TestState";
+import { isAllAnswered, TestData, updateAnswer } from "./TestState";
 
-const SingleTest = (props: SingleTestData) => {
+const SingleTest = (props: TestData) => {
   const answers = props.answers.map((answer, index) => {
     return (
       <p key={index}>

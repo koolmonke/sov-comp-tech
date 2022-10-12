@@ -1,6 +1,6 @@
 import { computed, signal } from "@preact/signals";
 
-export type SingleTestData = {
+export type TestData = {
   id: number;
   question: string;
   answers: string[];
@@ -8,7 +8,7 @@ export type SingleTestData = {
   givenAnswer?: string;
 };
 
-export const testState = signal<SingleTestData[]>([
+export const testState = signal<TestData[]>([
   {
     id: 0,
     question: "Из какой страны родом Джастин Бибер?",
