@@ -3,8 +3,7 @@ import style from "./style.css";
 import labStyle from "../style.css";
 import { useReducer } from "preact/hooks";
 
-type ArithmeticAction = "+" | "-" | "*" | "/";
-type Action = ArithmeticAction | "C" | "=";
+type Action = "+" | "-" | "*" | "/" | "C" | "=";
 
 const reduceAction = (
   left: number,
