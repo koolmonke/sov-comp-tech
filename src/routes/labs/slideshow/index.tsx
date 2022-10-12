@@ -1,8 +1,8 @@
 import { h } from "preact";
 import style from "../style.css";
-import Slideshow from "./SlideShow/SlideShow";
+import Slideshow from "./SlideShowComponent/SlideShow";
 
-const Lab1 = () => (
+const SlideShowPage = () => (
   <div class={style.lab}>
     <Slideshow
       imageUrls={[
@@ -17,4 +17,4 @@ const Lab1 = () => (
   </div>
 );
 
-export default Lab1;
+export default SlideShowPage;

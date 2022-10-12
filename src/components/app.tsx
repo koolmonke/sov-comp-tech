@@ -6,7 +6,7 @@ import Header from "./header";
 
 // Code-splitting is automated for `routes` directory
 import Home from "../routes/home";
-import Lab1 from "../routes/labs/lab1";
+import Lab1 from "../routes/labs/slideshow";
 
 const App = () => {
   const history: any = createHashHistory();
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <Router history={history}>
         <Route path="/" component={Home} />
-        <Route path="/lab/1" component={Lab1} />
+        <Route path="/lab/slideshow" component={Lab1} />
       </Router>
     </div>
   );
