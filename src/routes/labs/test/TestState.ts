@@ -40,7 +40,7 @@ export const testState = signal<TestData[]>([
   },
 ]);
 
-export const updateAnswer = (toUpdateId: number, newAnswer: string) => {
+export const updateAnswer = (toUpdateId: number, newAnswer: string): void => {
   const toUpdate = testState.value.find(({ id }) => toUpdateId === id);
   if (!toUpdate) {
     return;
