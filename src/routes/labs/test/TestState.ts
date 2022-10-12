@@ -46,7 +46,7 @@ export const updateAnswer = (toUpdateId: number, newAnswer: string): void => {
     return;
   }
   testState.value = [
-    ...testState.value.filter((item) => item.id !== toUpdateId),
+    ...testState.value.filter(({ id }) => id !== toUpdateId),
     { ...toUpdate, givenAnswer: newAnswer },
   ].sort((a, b) => a.id - b.id);
 };
