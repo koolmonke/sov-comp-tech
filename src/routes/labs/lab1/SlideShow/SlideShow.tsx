@@ -25,7 +25,7 @@ const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
           &#10095;
         </a>
       </div>
-      <p>
+      <p class={style.imageCounter}>
         {currentIndex + 1}/{imageUrls.length}
       </p>
     </div>

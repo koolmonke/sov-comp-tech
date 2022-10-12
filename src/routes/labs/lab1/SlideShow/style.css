@@ -14,6 +14,10 @@
   flex: 2;
 }
 
+.imageCounter {
+  text-align: center;
+}
+
 .buttons {
   user-select: none;
   display: flex;
