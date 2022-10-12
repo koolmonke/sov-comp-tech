@@ -5,6 +5,7 @@ import style from "./style.css";
 const Header = () => (
   <header class={style.header}>
     <nav>
+      <h1>Лабораторные работы по Современным компьютерным технологиям</h1>
       <Link activeClassName={style.active} href="/lab/slideshow">
         Слайдшоу
       </Link>

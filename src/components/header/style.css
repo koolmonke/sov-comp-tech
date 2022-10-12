@@ -1,5 +1,5 @@
 .header {
-	position: fixed;
+	position: relative;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -21,8 +21,8 @@
 }
 
 .header nav {
-	float: right;
 	font-size: 100%;
+	background: #673AB7;
 }
 
 .header nav a {
