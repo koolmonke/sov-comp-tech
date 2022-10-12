@@ -8,6 +8,7 @@ import Header from "./header";
 import Home from "../routes/home";
 import SlideShowPage from "../routes/labs/slideshow";
 import Calculator from "../routes/labs/calculator";
+import Test from "../routes/labs/test";
 
 const App = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" component={Home} />
         <Route path="/lab/slideshow" component={SlideShowPage} />
         <Route path="/lab/calc" component={Calculator} />
+        <Route path="/lab/test" component={Test} />
       </Router>
     </div>
   );
