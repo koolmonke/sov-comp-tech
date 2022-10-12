@@ -46,7 +46,7 @@ const reducer = (
       return [current, 0, "-"];
     case "=": {
       const result = reduceAction(previous, current, op);
-      if (result) return [current, result, op];
+      if (result) return [previous, result, op];
       return [previous, current, op];
     }
     case "C":
