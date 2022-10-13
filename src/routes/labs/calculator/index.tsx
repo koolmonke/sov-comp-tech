@@ -2,8 +2,7 @@ import { h } from "preact";
 import style from "./style.css";
 import labStyle from "../style.css";
 import { useReducer } from "preact/hooks";
-
-type Action = "+" | "-" | "*" | "/" | "C" | "=";
+import { Action, CalculatorState } from "./types";
 
 const reduceAction = (
   left: number,
@@ -26,19 +25,12 @@ const reduceAction = (
   }
 };
 
-type CalculatorState = {
-  previous: number;
-  current: number;
-  op: Action | null;
-  isResultOnScreen: boolean;
-};
-
-const calculatorInitualState: CalculatorState = {
+const calculatorInitualState = {
   previous: 0,
   current: 0,
   op: null,
   isResultOnScreen: false,
-};
+} as const;
 
 const reducer = (
   { previous, current, op, isResultOnScreen }: CalculatorState,
