@@ -15,6 +15,9 @@ const Header = () => (
       <Link activeClassName={style.active} href="/lab/test">
         Тест
       </Link>
+      <Link activeClassName={style.active} href="/lab/cart">
+        Корзина магазина
+      </Link>
       <Link activeClassName={style.active} href="/">
         Home Page
       </Link>

@@ -1,0 +1,25 @@
+.component {
+  text-align: center;
+  border: 2px solid #673ab7;
+  margin: 8px;
+}
+img {
+  width: 90%;
+}
+
+.button {
+  display: inline-block;
+  height: 56px;
+  min-width: 50px;
+  line-height: 56px;
+  background-color: #673ab7;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 15px;
+  user-select: none;
+}
+
+.button:hover {
+  background: rgba(103, 58, 183, 0.5);
+}
