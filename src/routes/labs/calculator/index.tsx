@@ -26,35 +26,34 @@ const reduceAction = (
   }
 };
 
-type CalculatorState = [number, number, Action | null];
+type CalculatorState = [number, number, Action | null, boolean];
 
 const reducer = (
-  [previous, current, op]: CalculatorState,
+  [previous, current, op, isResultOnScreen]: CalculatorState,
   action: Action | number
 ): CalculatorState => {
   if (typeof action == "number") {
-    return [previous, current * 10 + action, op];
+    if (isResultOnScreen) {
+      return [current, action, op, false];
+    }
+    return [previous, current * 10 + action, op, false];
   }
   switch (action) {
     case "*":
-      return [current, 0, "*"];
     case "/":
-      return [current, 0, "/"];
     case "+":
-      return [current, 0, "+"];
     case "-":
-      return [current, 0, "-"];
     case "=": {
       const result = reduceAction(previous, current, op);
-      return result ? [previous, result, op] : [previous, current, op];
+      return [current, result ? result : current, action, true];
     }
     case "C":
-      return [0, 0, null];
+      return [0, 0, null, false];
   }
 };
 
 const Calculator = () => {
-  const [currentState, dispatch] = useReducer(reducer, [0, 0, null]);
+  const [currentState, dispatch] = useReducer(reducer, [0, 0, null, false]);
 
   return (
     <div class={labStyle.lab}>
