@@ -1,6 +1,6 @@
 import { h } from "preact";
 import style from "../style.css";
-import Slideshow from "./SlideShowComponent/SlideShow";
+import Slideshow from "./components/SlideShow";
 
 const SlideShowPage = () => (
   <div class={style.lab}>
