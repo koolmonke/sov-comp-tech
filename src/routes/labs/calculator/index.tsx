@@ -26,17 +26,39 @@ const reduceAction = (
   }
 };
 
-type CalculatorState = [number, number, Action | null, boolean];
+type CalculatorState = {
+  previous: number;
+  current: number;
+  op: Action | null;
+  isResultOnScreen: boolean;
+};
+
+const calculatorInitualState: CalculatorState = {
+  previous: 0,
+  current: 0,
+  op: null,
+  isResultOnScreen: false,
+};
 
 const reducer = (
-  [previous, current, op, isResultOnScreen]: CalculatorState,
+  { previous, current, op, isResultOnScreen }: CalculatorState,
   action: Action | number
 ): CalculatorState => {
   if (typeof action == "number") {
     if (isResultOnScreen) {
-      return [current, action, op, false];
+      return {
+        previous: current,
+        current: action,
+        op,
+        isResultOnScreen: false,
+      };
     }
-    return [previous, current * 10 + action, op, false];
+    return {
+      previous,
+      current: current * 10 + action,
+      op,
+      isResultOnScreen: false,
+    };
   }
   switch (action) {
     case "*":
@@ -45,25 +67,25 @@ const reducer = (
     case "-":
     case "=": {
       const result = reduceAction(previous, current, op);
-      return [current, result ? result : current, action, true];
+      return {
+        previous: current,
+        current: result ? result : current,
+        op: action,
+        isResultOnScreen: true,
+      };
     }
     case "C":
-      return [0, 0, null, false];
+      return calculatorInitualState;
   }
 };
 
 const Calculator = () => {
-  const [currentState, dispatch] = useReducer(reducer, [0, 0, null, false]);
+  const [{ current }, dispatch] = useReducer(reducer, calculatorInitualState);
 
   return (
     <div class={labStyle.lab}>
       <div class={style.calculator}>
-        <input
-          value={currentState[1]}
-          readOnly
-          class={style.result}
-          type="text"
-        />
+        <input value={current} readOnly class={style.result} type="text" />
         <div class={style.grid}>
           <div class={style.gridElement} onClick={() => dispatch(1)}>
             1
