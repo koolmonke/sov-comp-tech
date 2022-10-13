@@ -12,7 +12,7 @@ import CartItemComponent from "./components/CartItem";
 
 const EmptyCart = () => <p>Ваша корзина пуста</p>;
 const CartTotalPrice = () => {
-  return <p>Сумма корзины {totalCartPrice}</p>;
+  return <p>Сумма корзины {totalCartPrice} руб.</p>;
 };
 
 const Cart = () => {

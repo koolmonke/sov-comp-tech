@@ -7,7 +7,7 @@ const StoreItemComponent = (props: StoreItem) => {
     <div class={style.component}>
       <img src={props.imageUri} />
       <p>
-        {props.name} {props.price} руб{" "}
+        {props.name} {props.price} руб.
       </p>
       <a class={style.button} onClick={() => addToCart(props.key)}>
         Добавить
