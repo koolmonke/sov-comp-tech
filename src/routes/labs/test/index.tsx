@@ -1,11 +1,11 @@
 import { h } from "preact";
 import labStyle from "../style.css";
-import { countRightAnswer, isAllAnswered, testState } from "./TestState";
+import { countRightAnswer, isAllAnswered, testState } from "./testState";
 import SingleTest from "./SingleTest";
 
 const Test = () => (
   <div class={labStyle.lab}>
-    {testState.value.map((item) => SingleTest(item))}
+    {testState.value.map(SingleTest)}
     {isAllAnswered.value && (
       <h3>
         Всего правильных ответов {countRightAnswer} из{" "}
