@@ -61,3 +61,6 @@ export const countRightAnswer = computed(
 export const isAllAnswered = computed(() =>
   testState.value.every(({ givenAnswer }) => givenAnswer !== undefined)
 );
+
+
+export const testLength = computed(() => testState.value.length)
