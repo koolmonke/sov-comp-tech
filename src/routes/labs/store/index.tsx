@@ -10,20 +10,15 @@ import {
 import StoreItemComponent from "./components/StoreItem";
 import CartItemComponent from "./components/CartItem";
 
-const EmptyCart = () => <p>Ваша корзина пуста</p>;
-const CartTotalPrice = () => {
-  return <p>Сумма корзины {totalCartPrice} руб.</p>;
-};
-
 const Cart = () => {
   return (
     <div class={labStyle.lab}>
       <div class={style.store}>{storeItems.map(StoreItemComponent)}</div>
       <div class={style.cart}>
         <p>Корзина</p>
-        {isCartEmpty.value && <EmptyCart />}
+        {isCartEmpty.value && <p>Ваша корзина пуста</p>}
         {cartState.value.map(CartItemComponent)}
-        {!isCartEmpty.value && <CartTotalPrice />}
+        {!isCartEmpty.value && <p>Сумма корзины {totalCartPrice} руб.</p>}
       </div>
     </div>
   );
