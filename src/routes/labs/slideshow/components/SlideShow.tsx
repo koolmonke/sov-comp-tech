@@ -15,7 +15,7 @@ const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
   const [currentIndex, dispatch] = useReducer(reducer, 0);
 
   useEffect(() => {
-    const timer = setInterval(() => dispatch("next"), 1500);
+    const timer = setInterval(() => dispatch("next"), 3000);
     return () => clearInterval(timer);
   }, []);
 
