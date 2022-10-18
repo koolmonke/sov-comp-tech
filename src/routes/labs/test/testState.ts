@@ -62,5 +62,8 @@ export const isAllAnswered = computed(() =>
   testState.value.every(({ givenAnswer }) => givenAnswer !== undefined)
 );
 
+export const testLength = computed(() => testState.value.length);
 
-export const testLength = computed(() => testState.value.length)
+export const mark = computed(() =>
+  Math.round(Math.max((countRightAnswer.value / testLength.value) * 5, 2))
+);

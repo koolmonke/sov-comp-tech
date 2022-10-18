@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { useReducer } from "preact/hooks";
+import { useEffect, useReducer } from "preact/hooks";
 import style from "./style.css";
 
 const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
@@ -13,6 +13,11 @@ const Slideshow = ({ imageUrls }: { imageUrls: string[] }) => {
   };
 
   const [currentIndex, dispatch] = useReducer(reducer, 0);
+
+  useEffect(() => {
+    const timer = setInterval(() => dispatch("next"), 1500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div class={style.slideContainer}>

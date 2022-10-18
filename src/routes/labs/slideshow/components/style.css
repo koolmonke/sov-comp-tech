@@ -16,8 +16,9 @@
 
 .imageCounter {
   text-align: center;
-}
+  transition: opacity 0.5s linear;
 
+}
 .buttons {
   user-select: none;
   display: flex;
@@ -30,9 +31,4 @@
 .buttons:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
-}
-
-.slideImage {
-  height: auto;
-  width: 100%;
 }

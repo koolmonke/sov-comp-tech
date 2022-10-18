@@ -1,5 +1,10 @@
 .home {
-	padding: 42px 20px;
-	min-height: 80%;
-	width: 100%;
+  padding: 15px 15px;
+  min-height: 80%;
+  width: 100%;
+}
+
+.image {
+  max-height: 400px;
+  width: auto;
 }
