@@ -49,6 +49,7 @@ export const updateAnswer = (toUpdateId: number, newAnswer: string): void => {
     ...testState.value.filter(({ id }) => id !== toUpdateId),
     { ...toUpdate, givenAnswer: newAnswer },
   ].sort((a, b) => a.id - b.id);
+  moveToNextQuestion()
 };
 
 export const countRightAnswer = computed(
@@ -62,8 +63,28 @@ export const isAllAnswered = computed(() =>
   testState.value.every(({ givenAnswer }) => givenAnswer !== undefined)
 );
 
+export const countAnswered = computed(
+  () =>
+    testState.value.filter(({ givenAnswer }) => givenAnswer !== undefined)
+      .length
+);
+
 export const testLength = computed(() => testState.value.length);
 
 export const mark = computed(() =>
   Math.round(Math.max((countRightAnswer.value / testLength.value) * 5, 2))
 );
+
+export const currentQuestion = signal<number>(0);
+
+export const moveToNextQuestion = () => {
+  if (currentQuestion.value < testLength.value - 1) {
+    currentQuestion.value = currentQuestion.value + 1;
+  }
+};
+
+export const moveToPrevQuestion = () => {
+  if (currentQuestion.value > 0) {
+    currentQuestion.value = currentQuestion.value - 1;
+  }
+};

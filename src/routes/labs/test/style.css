@@ -1,0 +1,13 @@
+.button {
+  display: inline-block;
+  height: 56px;
+  min-width: 80px;
+  line-height: 56px;
+  background-color: #673ab7;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 15px;
+  user-select: none;
+  margin: 10px;
+}

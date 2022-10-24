@@ -1,5 +1,12 @@
 import { h } from "preact";
-import { isAllAnswered, TestData, updateAnswer } from "./testState";
+import {
+  countAnswered,
+  currentQuestion,
+  isAllAnswered,
+  TestData,
+  testLength,
+  updateAnswer,
+} from "./testState";
 
 const SingleTest = (props: TestData) => {
   const answers = props.answers.map((answer, index) => (
@@ -20,6 +27,12 @@ const SingleTest = (props: TestData) => {
     <div>
       <h3>{props.question}</h3>
       <div>{answers}</div>
+      <p>
+        Отвечено {countAnswered} из {testLength}
+      </p>
+      <p>
+        Вопрос {currentQuestion.value+1} из {testLength}
+      </p>
     </div>
   );
 };
