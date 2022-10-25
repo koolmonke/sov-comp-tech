@@ -17,13 +17,6 @@
   margin: 5px;
 }
 
-.gridElement:hover {
-  background-color: #673ab7;
-  color: #fff;
-  cursor: pointer;
-}
-
-
 .container {
   margin-left: 40%;
   margin-right: 40%;
@@ -37,7 +30,7 @@
 
 .innerContainer {
   border: #673ab7 1px solid;
-  border-radius: 50px;
+  border-radius: 5%;
   padding: 15px;
-  background: #6e5599;
+  background: #673ab7;
 }
