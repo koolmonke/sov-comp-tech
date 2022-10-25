@@ -24,6 +24,9 @@ const Header = () => (
       <Link activeClassName={style.active} href="/lab/square">
         Квадрат
       </Link>
+      <Link activeClassName={style.active} href="/lab/carousel">
+        Карусель
+      </Link>
     </nav>
   </header>
 );

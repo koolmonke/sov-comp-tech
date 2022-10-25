@@ -1,0 +1,81 @@
+.block-carousel {
+  width: 85%;
+  height: auto;
+}
+
+.size-item {
+  width: 175px;
+  height: 175px;
+  margin: 5px;
+}
+
+.cards_wrapper {
+  position: relative;
+  height: 485px;
+  width: 485px;
+  font: bold 11px/1em "Arial", sans-serif;
+}
+
+.cards_wrapper::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 66px);
+  height: calc(100% - 66px);
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px dashed #d5e1ec;
+}
+
+.angle_wrapper {
+  position: absolute;
+  left: calc(50% - 50px);
+  height: 50%;
+  transform-origin: 50% 100%;
+  transition: transform 0.2s linear;
+}
+
+.card {
+  position: relative;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  transform-origin: 50% 33px;
+  transition: transform 0.2s linear;
+}
+
+.card_img {
+  width: 150px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 3px solid #d5e1ec;
+}
+
+.card_title,
+.card_rating {
+  margin: 0;
+  color: #696d78;
+}
+
+.card_rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #abd2ee;
+}
+
+.container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}

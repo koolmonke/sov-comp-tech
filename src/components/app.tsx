@@ -11,6 +11,7 @@ import Calculator from "../routes/labs/calculator";
 import Test from "../routes/labs/test";
 import Store from "../routes/labs/store";
 import Square from "../routes/labs/square"
+import Carousel from "../routes/labs/carousel"
 
 const App = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/lab/test" component={Test} />
         <Route path="/lab/cart" component={Store} />
         <Route path="/lab/square" component={Square} />
+        <Route path="/lab/carousel" component={Carousel} />
       </Router>
     </div>
   );
