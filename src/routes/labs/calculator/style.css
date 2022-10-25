@@ -1,19 +1,43 @@
 .result {
-  width: 40%;
+  width: 400px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .grid {
-  width: 40%;
+  width: 400px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 40px;
   text-align: center;
 }
 
+.gridElement {
+  border: solid #673ab7 1px;
+  margin: 5px;
+}
+
 .gridElement:hover {
   background-color: #673ab7;
   color: #fff;
   cursor: pointer;
+}
+
+
+.container {
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 10px;
+}
+
+.innerContainer {
+  border: #673ab7 1px solid;
+  border-radius: 50px;
+  padding: 15px;
+  background: #6e5599;
 }

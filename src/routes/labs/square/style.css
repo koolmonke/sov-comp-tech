@@ -15,7 +15,10 @@
   animation-duration: 2s;
   top: 50px;
   left: 50px;
+  right: 50px;
   margin: 25%;
+  border-radius: 50%;
+  border: solid 1px blue;
 }
 @keyframes orbit {
   from {
