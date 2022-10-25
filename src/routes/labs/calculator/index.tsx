@@ -1,10 +1,8 @@
 import { h } from "preact";
 import style from "./style.css";
-import labStyle from "../style.css";
 import { useReducer } from "preact/hooks";
 import { Action, CalculatorState } from "./types";
 
-import CarouselStyle from "../carousel/style.css";
 
 const reduceAction = (
   left: number,
