@@ -59,9 +59,7 @@ export const countRightAnswer = computed(
     ).length
 );
 
-export const isAllAnswered = computed(() =>
-  testState.value.every(({ givenAnswer }) => givenAnswer !== undefined)
-);
+export const isAllAnswered = signal<boolean>(false);
 
 export const countAnswered = computed(
   () =>

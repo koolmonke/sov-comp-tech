@@ -1,17 +1,16 @@
 import { h } from "preact";
 import {
   countAnswered,
-  currentQuestion,
   isAllAnswered,
   TestData,
   testLength,
   updateAnswer,
 } from "./testState";
+import style from "./style.css"
 
 const SingleTest = (props: TestData) => {
   const answers = props.answers.map((answer, index) => (
     <p key={index}>
-      {answer}{" "}
       <input
         type="checkbox"
         checked={answer === props.givenAnswer}
@@ -21,17 +20,16 @@ const SingleTest = (props: TestData) => {
           updateAnswer(props.id, answer);
         }}
       />
+      {" "}
+      {answer}
     </p>
   ));
   return (
-    <div>
+    <div class={style.test}>
       <h3>{props.question}</h3>
       <div>{answers}</div>
       <p>
         Отвечено {countAnswered} из {testLength}
-      </p>
-      <p>
-        Вопрос {currentQuestion.value+1} из {testLength}
       </p>
     </div>
   );

@@ -23,15 +23,21 @@ const Result = () => (
 );
 
 const RightButton = () => (
-  <a class={style.button} onClick={() => moveToPrevQuestion()}>
+  <button class={style.button} onClick={() => moveToPrevQuestion()}>
     Предыдущий
-  </a>
+  </button>
 );
 
 const LeftButton = () => (
-  <a class={style.button} onClick={() => moveToNextQuestion()}>
+  <button class={style.button} onClick={() => moveToNextQuestion()}>
     Следующий
-  </a>
+  </button>
+);
+
+const EndButton = () => (
+  <button class={style.button} onClick={() => (isAllAnswered.value = true)}>
+    Завершить
+  </button>
 );
 
 const Test = () => (
@@ -42,6 +48,7 @@ const Test = () => (
         <div>
           <LeftButton />
           <RightButton />
+          <EndButton />
         </div>
       </div>
     )}
