@@ -24,7 +24,7 @@ const reduceAction = (
   }
 };
 
-const calculatorInitualState = {
+const calculatorInitialState = {
   previous: 0,
   current: 0,
   op: null,
@@ -66,12 +66,12 @@ const reducer = (
       };
     }
     case "C":
-      return calculatorInitualState;
+      return calculatorInitialState;
   }
 };
 
 const Calculator = () => {
-  const [{ current }, dispatch] = useReducer(reducer, calculatorInitualState);
+  const [{ current }, dispatch] = useReducer(reducer, calculatorInitialState);
   const buttons = (
     [1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "/", "C", 0, "=", "*"] as const
   ).map((buttonName) => (
