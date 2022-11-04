@@ -66,7 +66,7 @@ export const removeAllFromCart = (key: number) => {
 };
 
 export const totalCartPrice = computed(() =>
-  cartState.value.reduce((acc, {price, amount}) => acc + price * amount, 0)
+  cartState.value.reduce((acc, { price, amount }) => acc + price * amount, 0)
 );
 
 export const isCartEmpty = computed(() => cartState.value.length === 0);
