@@ -1,6 +1,5 @@
 import { h } from "preact";
-import React from "preact/compat";
-import { useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import style from "./style.css";
 
 const initialCards = [
@@ -27,8 +26,8 @@ const initialCards = [
 ];
 
 const Carousel = () => {
-  const [IsRotate, setIsRotate] = React.useState(false);
-  const [cards, setCards] = React.useState(initialCards);
+  const [IsRotate, setIsRotate] = useState(false);
+  const [cards, setCards] = useState(initialCards);
 
   const handleRotate = () => {
     const newCards = cards.map((card) => {
@@ -52,7 +51,7 @@ const Carousel = () => {
       }
     }, 200);
     return () => clearInterval(startInterval);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [IsRotate, cards]);
 
   return (
