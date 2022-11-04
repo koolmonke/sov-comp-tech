@@ -3,7 +3,6 @@ import style from "./style.css";
 import { useReducer } from "preact/hooks";
 import { Action, CalculatorState } from "./types";
 
-
 const reduceAction = (
   left: number,
   right: number,
@@ -73,62 +72,24 @@ const reducer = (
 
 const Calculator = () => {
   const [{ current }, dispatch] = useReducer(reducer, calculatorInitualState);
+  const buttons = (
+    [1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "/", "C", 0, "=", "*"] as const
+  ).map((buttonName) => (
+    <button
+      key={buttonName}
+      class={style.gridElement}
+      onClick={() => dispatch(buttonName)}
+    >
+      {buttonName}
+    </button>
+  ));
 
   return (
     <div class={style.container}>
       <div class={style.innerContainer}>
         <div class={style.calculator}>
           <input value={current} readOnly class={style.result} type="text" />
-          <div class={style.grid}>
-            <button class={style.gridElement} onClick={() => dispatch(1)}>
-              1
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(2)}>
-              2
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(3)}>
-              3
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("+")}>
-              +
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(4)}>
-              4
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(5)}>
-              5
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(6)}>
-              6
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("-")}>
-              -
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(7)}>
-              7
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(8)}>
-              8
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(9)}>
-              9
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("/")}>
-              /
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("C")}>
-              C
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch(0)}>
-              0
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("=")}>
-              =
-            </button>
-            <button class={style.gridElement} onClick={() => dispatch("*")}>
-              *
-            </button>
-          </div>
+          <div class={style.grid}>{buttons}</div>
         </div>
       </div>
     </div>
