@@ -58,7 +58,7 @@ export const countRightAnswer = computed(
     ).length
 );
 
-export const isAllAnswered = signal<boolean>(false);
+export const isTestEnded = signal<boolean>(false);
 
 export const countAnswered = computed(
   () =>
@@ -74,14 +74,13 @@ export const mark = computed(() =>
 
 export const currentQuestion = signal<number>(0);
 
-export const moveToNextQuestion = () => {
-  if (currentQuestion.value < testLength.value - 1) {
-    currentQuestion.value = currentQuestion.value + 1;
-  }
+export const setQuestion = (index: number) => {
+  if (index >= 0 && testLength.value > index) currentQuestion.value = index;
 };
 
-export const moveToPrevQuestion = () => {
-  if (currentQuestion.value > 0) {
-    currentQuestion.value = currentQuestion.value - 1;
-  }
-};
+export const moveToNextQuestion = () => setQuestion(currentQuestion.value + 1);
+
+export const moveToPrevQuestion = () => setQuestion(currentQuestion.value - 1);
+
+export const isQuestionAnswered = (index: number) =>
+  testState.value[index].givenAnswer !== undefined;

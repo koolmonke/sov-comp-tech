@@ -1,12 +1,12 @@
 import { h } from "preact";
 import {
   countAnswered,
-  isAllAnswered,
+  isTestEnded,
   TestData,
   testLength,
   updateAnswer,
 } from "./testState";
-import style from "./style.css"
+import style from "./style.css";
 
 const SingleTest = (props: TestData) => {
   const answers = props.answers.map((answer, index) => (
@@ -14,13 +14,12 @@ const SingleTest = (props: TestData) => {
       <input
         type="checkbox"
         checked={answer === props.givenAnswer}
-        disabled={isAllAnswered.value}
+        disabled={isTestEnded.value}
         onClick={(e) => {
           e.preventDefault();
           updateAnswer(props.id, answer);
         }}
-      />
-      {" "}
+      />{" "}
       {answer}
     </p>
   ));

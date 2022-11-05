@@ -5,3 +5,9 @@
 .test {
   min-height: 280px;
 }
+
+.buttonAnswered {
+  margin-right: 5px;
+  background-color: #673ab7;
+  color: #fafafa;
+}

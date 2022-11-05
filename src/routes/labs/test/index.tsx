@@ -4,10 +4,12 @@ import style from "./style.css";
 import {
   countRightAnswer,
   currentQuestion,
-  isAllAnswered,
+  isQuestionAnswered,
+  isTestEnded,
   mark,
   moveToNextQuestion,
   moveToPrevQuestion,
+  setQuestion,
   testLength,
   testState,
 } from "./testState";
@@ -35,14 +37,14 @@ const LeftButton = () => (
 );
 
 const EndButton = () => (
-  <button class={style.button} onClick={() => (isAllAnswered.value = true)}>
+  <button class={style.button} onClick={() => (isTestEnded.value = true)}>
     Завершить
   </button>
 );
 
 const Test = () => (
   <div class={labStyle.lab}>
-    {!isAllAnswered.value && (
+    {!isTestEnded.value && (
       <div>
         {SingleTest(testState.value[currentQuestion.value])}
         <div>
@@ -50,9 +52,29 @@ const Test = () => (
           <RightButton />
           <EndButton />
         </div>
+        <div>
+          <p> </p>
+          <p>
+            {" "}
+            Вопрос:
+            {testState.value.map((_, index) => (
+              <button
+                key={index}
+                class={
+                  isQuestionAnswered(index)
+                    ? style.buttonAnswered
+                    : style.button
+                }
+                onClick={() => setQuestion(index)}
+              >
+                {index}
+              </button>
+            ))}
+          </p>
+        </div>
       </div>
     )}
-    {isAllAnswered.value && Result()}
+    {isTestEnded.value && Result()}
   </div>
 );
 
